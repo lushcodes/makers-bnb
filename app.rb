@@ -11,4 +11,13 @@ class BnB < Sinatra::Base
   get ('/') do
     erb(:index)
   end
+
+  get ('/sign-up') do
+    erb(:sign_up)
+  end
+
+  post ('/new-user') do
+    
+    
+  end
 end

@@ -1,8 +1,31 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/lukeusher/Documents/MAKERS/makers-bnb/spec/features/ready_check_spec.rb": {
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/spec/booking_spec.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/lib/booking.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/spec/features/sign_up_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -10,8 +33,44 @@
           null,
           null
         ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/spec/space_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/lib/space.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/spec/user_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/lib/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1627306313
+    "timestamp": 1627309196
   }
 }
