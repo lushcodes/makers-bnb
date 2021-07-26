@@ -1,6 +1,8 @@
 # makers-bnb
 A web app clone of airbnb
 
+
+## USER STORIES FOR MVP
 ```
 As a user,
 So I can see what spaces are available,
