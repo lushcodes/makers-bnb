@@ -11,4 +11,16 @@ class BnB < Sinatra::Base
   get ('/') do
     erb(:index)
   end
+
+  get ('/add_space') do
+    erb(:space_form)
+  end
+
+  post ('/listings') do
+    @name = params['name']
+    @description = params['description']
+    @price = params['ppn']
+    erb(:properties)
+  end
+
 end
