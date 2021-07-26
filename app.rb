@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/user'
 
 class BnB < Sinatra::Base
   configure :development do
@@ -17,7 +18,7 @@ class BnB < Sinatra::Base
   end
 
   post ('/new-user') do
-    
-    
+    User.create(username: params[:username], email: params[:email], password: params[:password])
+    redirect('/')
   end
 end

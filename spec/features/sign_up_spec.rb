@@ -8,4 +8,15 @@ feature 'Sign up' do
     expect(page).to have_field('Password', type: 'password', placeholder: 'Password')
     expect(page).to have_button('Submit')
   end
+
+  scenario 'User can sign up' do
+    visit('/')
+    expect(page).to have_button('Sign Up')
+    click_button 'Sign Up'
+    fill_in 'username', with: 'Luke'
+    fill_in 'email', with: 'lukeusher@email.com'
+    fill_in 'password', with: 'password123'
+    click_button 'Submit'
+    expect(current_path).to eq '/'
+  end
 end
