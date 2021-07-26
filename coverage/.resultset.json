@@ -49,19 +49,32 @@
       },
       "/Users/young/projects/week_4/week_5/makers-bnb/spec/space_spec.rb": {
         "lines": [
-          null,
-          null,
           1,
           null,
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
       "/Users/young/projects/week_4/week_5/makers-bnb/lib/space.rb": {
         "lines": [
-          null,
+          1,
+          1,
           null,
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -84,6 +97,6 @@
         ]
       }
     },
-    "timestamp": 1627310320
+    "timestamp": 1627311569
   }
 }
