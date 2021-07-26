@@ -2,7 +2,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/user'
+require './lib/userç'
 
 class BnB < Sinatra::Base
   configure :development do
