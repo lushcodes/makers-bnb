@@ -10,20 +10,17 @@ class BnB < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get ('/') do
-    if session[:logged_in] == nil
-      session[:logged_in] = false
-    end
-    @logged_in = session[:logged_in] 
+  get('/') do
+    session[:logged_in] = false if session[:logged_in].nil?
+    @logged_in = session[:logged_in]
     erb(:index)
-    
   end
 
-  get ('/sign-up') do
+  get('/sign-up') do
     erb(:sign_up)
   end
 
-  post ('/new-user') do
+  post('/new-user') do
     User.create(username: params[:username], email: params[:email], password: params[:password])
     session[:logged_in] = true
     redirect('/')

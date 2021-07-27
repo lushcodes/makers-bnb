@@ -18,17 +18,22 @@ body {
 
 main {
   display: flex;
-  flex-direction: row;
-  flex: 1;
+  flex-direction: column;
 }
-.content-tile {
-  padding: 10px;
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+.card {
+  margin: 5px;
 }
 
 footer {
-  text-align: right;
+  text-align: center;
 }
-
 
 .bgimage {
   flex-direction: column;
