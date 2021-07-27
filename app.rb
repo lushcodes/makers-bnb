@@ -8,19 +8,18 @@ class BnB < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  get ('/') do
+  get('/') do
     erb(:index)
   end
 
-  get ('/add_space') do
+  get('/add_space') do
     erb(:space_form)
   end
 
-  post ('/listings') do
+  post('/listings') do
     @name = params['name']
     @description = params['description']
     @price = params['ppn']
     erb(:properties)
   end
-
 end
