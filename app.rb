@@ -20,9 +20,22 @@ class BnB < Sinatra::Base
     erb(:sign_up)
   end
 
+  get('/session') do
+    erb(:log_in)
+  end
+
   post('/new-user') do
     User.create(username: params[:username], email: params[:email], password: params[:password])
     session[:logged_in] = true
     redirect('/')
+  end
+
+  post('/session/new') do
+    session[:logged_in] = User.authenticate(email: params[:email], password: params[:password])
+      if session[:logged_in] == true
+      redirect('/')
+      else
+      redirect('/session')
+      end
   end
 end

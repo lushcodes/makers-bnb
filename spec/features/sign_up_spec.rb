@@ -14,9 +14,10 @@ feature 'Sign up' do
     expect(page).to have_button('Sign Up')
     click_button 'Sign Up'
     fill_in 'username', with: 'Luke'
-    fill_in 'email', with: 'lukeusher@email.com'
-    fill_in 'password', with: 'password123'
+    fill_in 'email', with: 'lukerocks@party.io'
+    fill_in 'password', with: 'Flumpy'
     click_button 'Submit'
     expect(current_path).to eq '/'
+    expect(page).to have_content 'You are signed in.'
   end
 end
