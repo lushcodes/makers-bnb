@@ -10,8 +10,8 @@ feature 'Sign up' do
   end
 
   scenario 'User can sign up' do
+    clear_test_table
     visit('/')
-    expect(page).to have_button('Sign Up')
     click_button 'Sign Up'
     fill_in 'username', with: 'Luke'
     fill_in 'email', with: 'lukerocks@party.io'
@@ -19,5 +19,16 @@ feature 'Sign up' do
     click_button 'Submit'
     expect(current_path).to eq '/'
     expect(page).to have_content 'You are signed in.'
+  end
+
+  scenario 'cannot sign up if user already exist' do
+    populate_test_table
+    visit('/')
+    click_button 'Sign Up'
+    fill_in 'username', with: 'Luke'
+    fill_in 'email', with: 'lukerocks@party.io'
+    fill_in 'password', with: 'Flumpy'
+    click_button 'Submit'
+    expect(current_path).to eq '/sign-up'
   end
 end

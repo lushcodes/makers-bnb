@@ -25,17 +25,21 @@ class BnB < Sinatra::Base
   end
 
   post('/new-user') do
-    User.create(username: params[:username], email: params[:email], password: params[:password])
-    session[:logged_in] = true
-    redirect('/')
+    user = User.create(username: params[:username], email: params[:email], password: params[:password])
+    if user.nil?
+      redirect('/sign-up')
+    else
+      session[:logged_in] = true
+      redirect('/')
+    end
   end
 
   post('/session/new') do
     session[:logged_in] = User.authenticate(email: params[:email], password: params[:password])
-      if session[:logged_in] == true
+    if session[:logged_in] == true
       redirect('/')
-      else
+    else
       redirect('/session')
-      end
+    end
   end
 end
