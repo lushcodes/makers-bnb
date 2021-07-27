@@ -1,5 +1,70 @@
-<h1>MAKERS BNB</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+	  <title>Makers BnB</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<form action="/sign-up" method="get">
-  <input type="submit" name="signup" value="Sign Up">
-</form>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="<%= url('stylesheet.css') %>" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+		<div class="container">
+      <header>
+        <h1>MAKERS BNB</h1>
+        <div class='sign_up'>    
+          <% if @logged_in == false %>
+            <form action="/sign-up" method="get">
+              <input type="submit" name="signup" value="Sign Up" class="btn btn-primary">
+            </form>
+          <% else %>
+            <p>You are signed in.</p>
+          <% end %>
+        </div>
+      </header>
+
+      <main>
+      <section class="bgimage">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h5>Hello, world! Full width Hero-unit header</h5>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a href="#" class="btn btn-primary btn-large">Learn more »</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <div class="content-tile">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor eros justo, ac varius mauris semper id. Fusce consectetur tincidunt est sed tristique. Vestibulum nec nulla nec nunc ullamcorper venenatis et id nibh. Donec lobortis in libero vitae elementum. Etiam eleifend, massa vitae congue ultricies, leo est imperdiet leo, nec euismod enim eros id dolor. Praesent rhoncus venenatis erat, et venenatis tortor tristique nec. Vivamus odio odio, rhoncus in luctus in, fermentum vitae ipsum. Curabitur vitae metus in diam lacinia fermentum in in lorem. Duis lacinia ac turpis sit amet finibus. Proin consectetur erat scelerisque, tempus mi nec, aliquet enim. Nullam ac magna id sem iaculis ultricies vel a velit. Etiam placerat maximus pharetra. Aenean volutpat eget turpis at tempus. Vestibulum vel massa aliquet, consequat turpis vel, vestibulum orci. Etiam malesuada justo porttitor justo posuere laoreet. Nullam eu dolor venenatis, bibendum augue ut, consequat ligula.
+       </div>
+       <div class="content-tile">
+        Fusce ac cursus ligula, id pellentesque enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam id velit quis est dignissim accumsan at sed purus. Nam in felis id metus ultricies viverra et nec sapien. Vestibulum feugiat quam at lorem efficitur, in placerat magna laoreet. Integer pellentesque id dolor vitae eleifend. Etiam felis ex, lobortis ut dolor at, fringilla convallis enim. Integer vestibulum ornare mi sed lacinia. Morbi vitae diam pharetra, vulputate massa sit amet, tincidunt magna. Suspendisse nec ullamcorper nisi.
+        </div>
+        <div class="content-tile">
+        Nullam molestie molestie nulla non fringilla. Donec in elit vitae felis sodales ornare. Duis porttitor ut leo in laoreet. Praesent convallis finibus tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget lacinia nulla. Donec a risus ac ligula iaculis blandit. Quisque maximus auctor rhoncus. Praesent ac magna tincidunt, vestibulum risus non, cursus neque. Nunc velit velit, convallis vitae risus ac, egestas fermentum eros. In vitae mauris non metus pellentesque molestie quis sed massa. Nulla consectetur, neque in aliquet imperdiet, quam odio viverra ex, vel vestibulum quam arcu et nunc. Suspendisse placerat leo ut neque fermentum, vitae molestie magna euismod. Aenean fermentum condimentum lacus, auctor porta metus aliquet in.
+        </div>
+        <div class="content-tile">
+        Sed iaculis mi at massa aliquam, ut imperdiet urna congue. Vivamus laoreet aliquet ligula, nec congue lorem efficitur vel. Fusce eleifend nisl id justo posuere vehicula. Quisque eget ligula sodales, fringilla mi sit amet, tempor ligula. Aenean velit massa, laoreet id blandit quis, viverra ac nisi. Proin at ipsum augue. Duis rutrum ex at diam porta ultricies. Vestibulum semper ipsum a varius auctor. Aliquam a velit sed quam luctus eleifend mattis id libero. Nunc pellentesque vitae dui sit amet tincidunt. Praesent volutpat ultricies leo quis volutpat.
+        </div>
+        <div class="content-tile">
+        Duis ligula ante, luctus eu hendrerit non, sollicitudin a massa. Fusce congue a quam eu pharetra. Nam consequat justo eu dapibus dignissim. Nulla luctus eleifend nunc ut tempor. Nulla orci turpis, dapibus in posuere vel, accumsan sed urna. Praesent eget arcu in erat ultrices sodales non vitae enim. Pellentesque commodo, est a consectetur vehicula, dui nunc bibendum libero, euismod commodo turpis leo vel ante.
+      </div>
+      </main>
+
+      <footer>
+        Created 2021 by Brett, Else, Luke, Thomas, and Will
+      </footer>
+    </div>
+
+    <!-- JavaScript to enable some elements to work -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

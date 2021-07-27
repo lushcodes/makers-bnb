@@ -2,15 +2,21 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
-require './lib/userç'
+require './lib/user'
 
 class BnB < Sinatra::Base
+  enable :sessions
   configure :development do
     register Sinatra::Reloader
   end
 
   get ('/') do
+    if session[:logged_in] == nil
+      session[:logged_in] = false
+    end
+    @logged_in = session[:logged_in] 
     erb(:index)
+    
   end
 
   get ('/sign-up') do
@@ -19,6 +25,7 @@ class BnB < Sinatra::Base
 
   post ('/new-user') do
     User.create(username: params[:username], email: params[:email], password: params[:password])
+    session[:logged_in] = true
     redirect('/')
   end
 end
