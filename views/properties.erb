@@ -1,5 +1,8 @@
-<%= @name %>
-<br>
-<%= @description %>
-<br>
-<%= @price %>
+
+<ul>
+  <% @spaces.each do |space|%>
+  <li><%=space.name%></li>
+  <li><%=space.description%></li>
+  <li><%=space.price%></li>
+  <% end %>
+  </ul>

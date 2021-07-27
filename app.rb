@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/space'
 
 class BnB < Sinatra::Base
   configure :development do
@@ -17,9 +18,8 @@ class BnB < Sinatra::Base
   end
 
   post('/listings') do
-    @name = params['name']
-    @description = params['description']
-    @price = params['ppn']
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    @spaces = Space.list
     erb(:properties)
   end
 end

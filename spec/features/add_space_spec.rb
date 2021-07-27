@@ -5,7 +5,7 @@ feature 'Website has a databse of spaces' do
     visit('/add_space')
     fill_in('name', with: 'Lake house')
     fill_in('description', with: 'A lovely house by the water')
-    fill_in('ppn', with: '1000') # ppn (price per night)
+    fill_in('price', with: '1000') # ppn (price per night)
     click_button('submit')
     expect(page).to have_content('Lake house')
     expect(page).to have_content('A lovely house by the water')

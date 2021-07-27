@@ -19,8 +19,9 @@ class Space
              PG.connect(dbname: 'bnb')
            end
 
-    conn.exec("INSERT INTO space (name, description, price)
-    VALUES('#{name}', '#{description}', '#{price}')")
+    result = conn.exec("INSERT INTO space (name, description, price)
+    VALUES('#{name}', '#{description}', '#{price}') RETURNING id, name, description, price;")
+    Space.new(name: result[0]['name'], description: result[0]['description'], price: result[0]['price'])
   end
 
   def self.list
