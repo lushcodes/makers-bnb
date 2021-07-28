@@ -50,8 +50,8 @@ class BnB < Sinatra::Base
   end
 
   post('/listings') do
-      Space.create(name: params[:name], description: params[:description], price: params[:price])
-      redirect '/allspaces'
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/allspaces'
   end
 
   get('/allspaces') do

@@ -18,8 +18,10 @@ class Booking
       else
         PG.connect(dbname: 'bnb')
       end
-      result = conn.exec("INSERT INTO bookings (name, description, price) 
-      VALUES('#{selected_space.name}', '#{selected_space.description}', '#{selected_space.price}') RETURNING name, description, price;")
-      Booking.new(name: result[0]['name'], description: result[0]['description'], price: result[0]['price'])
-    end
+    result = conn.exec("INSERT INTO bookings (name, description, price) 
+      VALUES('#{selected_space.name}', '#{selected_space.description}', '#{selected_space.price}') 
+      RETURNING name, description, price;"
+    )
+    Booking.new(name: result[0]['name'], description: result[0]['description'], price: result[0]['price'])
+  end
 end
