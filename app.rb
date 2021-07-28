@@ -18,9 +18,9 @@ class BnB < Sinatra::Base
   end
 
   post('/listings') do
-    Space.create(name: params[:name], description: params[:description], price: params[:price])
-    @spaces = Space.list
-    erb(:properties)
+      Space.create(name: params[:name], description: params[:description], price: params[:price])
+      @spaces = Space.list
+      erb(:properties)
   end
 
   post('/bookings') do
