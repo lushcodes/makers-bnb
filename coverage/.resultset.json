@@ -49,6 +49,12 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -75,6 +81,24 @@
           1,
           1,
           1,
+          null,
+          null
+        ]
+      },
+      "/Users/lukeusher/Documents/MAKERS/makers-bnb/spec/features/logout_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -177,6 +201,6 @@
         ]
       }
     },
-    "timestamp": 1627480962
+    "timestamp": 1627485660
   }
 }

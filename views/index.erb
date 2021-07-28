@@ -29,7 +29,9 @@
               <input type="submit" name="signup" value="Sign Up" class="btn btn-primary">
             </form>
           <% else %>
-            <p>You are signed in.</p>
+             <form action="/logout" method="get">
+              <input type="submit" name="logout" value="Log Out" class="btn btn-primary">
+            </form>
           <% end %>
         </div>
       </header>
@@ -43,6 +45,7 @@
               <h5>Hello, world! Full width Hero-unit header</h5>
               <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
               <p><a href="/add_space" class="btn btn-primary btn-large">Add A Space »</a></p>
+              <p><a href="/allspaces" class="btn btn-primary btn-large">Book A Space »</a></p>
             </div>
           </div>
         </div>
