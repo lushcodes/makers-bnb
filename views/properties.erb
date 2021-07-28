@@ -1,0 +1,12 @@
+
+<ul>
+  <% @spaces.each do |space|%>
+  <li><%=space.name%></li>
+  <li><%=space.description%></li>
+  <li><%=space.price%></li>
+  <form action="/bookings" method="post">
+  <input type="submit" value="Book"/>
+  </form>
+  <% end %>
+
+  </ul>

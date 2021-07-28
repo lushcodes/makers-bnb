@@ -1,5 +1,6 @@
 feature 'Log In' do
   scenario 'user can log in' do
+    populate_test_table
     visit('/')
     expect(page).to have_button('Log In')
     click_button 'Log In'

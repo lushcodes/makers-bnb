@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/user'
+require './lib/space'
 
 class BnB < Sinatra::Base
   enable :sessions
@@ -41,5 +42,23 @@ class BnB < Sinatra::Base
     else
       redirect('/session')
     end
+  end
+
+  get('/add_space') do
+    erb(:space_form)
+  end
+
+  post('/listings') do
+      Space.create(name: params[:name], description: params[:description], price: params[:price])
+      redirect '/allspaces'
+  end
+
+  get('/allspaces') do
+    @spaces = Space.list
+    erb(:properties)
+  end
+
+  post('/bookings') do
+    erb(:bookings)
   end
 end

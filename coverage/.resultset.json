@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/spec/booking_spec.rb": {
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/booking_spec.rb": {
         "lines": [
           null,
           null,
@@ -11,7 +11,7 @@
           null
         ]
       },
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/lib/booking.rb": {
+      "/Users/young/projects/week_4/week_5/makers-bnb/lib/booking.rb": {
         "lines": [
           null,
           null,
@@ -19,22 +19,10 @@
           null
         ]
       },
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/spec/features/login_spec.rb": {
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/features/add_space_spec.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
-          1,
-          1,
           1,
           1,
           1,
@@ -45,7 +33,20 @@
           null
         ]
       },
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/spec/features/sign_up_spec.rb": {
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/features/booking_space_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/features/login_spec.rb": {
         "lines": [
           1,
           1,
@@ -56,21 +57,10 @@
           1,
           1,
           1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           null,
           null,
-          1,
           1,
           1,
           1,
@@ -83,25 +73,75 @@
           null
         ]
       },
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/spec/space_spec.rb": {
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/features/sign_up_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/space_spec.rb": {
         "lines": [
           null,
           null,
           1,
           null,
           1,
-          null
-        ]
-      },
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/lib/space.rb": {
-        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
-      "/Users/elsemeijerink/Projects/makers/week5/makers-bnb/spec/user_spec.rb": {
+      "/Users/young/projects/week_4/week_5/makers-bnb/spec/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -131,6 +171,6 @@
         ]
       }
     },
-    "timestamp": 1627401154
+    "timestamp": 1627470415
   }
 }
