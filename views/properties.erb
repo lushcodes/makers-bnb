@@ -5,7 +5,8 @@
   <li><%=space.description%></li>
   <li><%=space.price%></li>
   <form action="/bookings" method="post">
-  <input type="submit" value="Book" name='<%=space.name%> book'/>
+  <input type="hidden" name="space_id" value="<%= space.space_id %>" />
+  <input type="submit" value="Book" name="Book <%= space.name %>"/>
   </form>
   <% end %>
   </ul>

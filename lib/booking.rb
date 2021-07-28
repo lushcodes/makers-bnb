@@ -11,10 +11,8 @@ class Booking
     @price = price
   end
 
-  def self.create(name:, description:, price:)
-    selected_space = Space.find_space(name: name)
-    p selected_space
-    p name, description, price
+  def self.create(id:)
+    selected_space = Space.find_space(id: id)
     conn = if ENV['RACK_ENV'] == 'test'
         PG.connect(dbname: 'bnb_test')
       else

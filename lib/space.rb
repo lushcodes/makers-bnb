@@ -26,13 +26,13 @@ class Space
     Space.new(space_id: result[0]['space_id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'])
   end
 
-  def self.find_space(name:)
+  def self.find_space(id:)
     conn = if ENV['RACK_ENV'] == 'test'
         PG.connect(dbname: 'bnb_test')
       else
         PG.connect(dbname: 'bnb')
       end
-    result = conn.exec("SELECT * FROM spaces WHERE name = '#{name}';")
+    result = conn.exec("SELECT * FROM spaces WHERE space_id = '#{id}';")
     Space.new(space_id: result[0]['space_id'], name: result[0]['name'], description: result[0]['description'], price: result[0]['price'])
   end
 

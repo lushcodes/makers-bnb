@@ -60,8 +60,7 @@ class BnB < Sinatra::Base
   end
 
   post('/bookings') do
-    p params
-    @booking = Booking.create(name: params[:name], description: params[:description], price: params[:price])
+    @booking = Booking.create(id: params[:space_id])
     erb(:bookings)
   end
 end
