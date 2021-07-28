@@ -20,8 +20,8 @@ class Space
              PG.connect(dbname: 'bnb')
            end
 
-    result = conn.exec("INSERT INTO space (name, description, price)
-    VALUES('#{name}', '#{description}', '#{price}') RETURNING id, name, description, price;")
+    result = conn.exec("INSERT INTO spaces (name, description, price)
+    VALUES('#{name}', '#{description}', '#{price}') RETURNING space_id, name, description, price;")
     Space.new(name: result[0]['name'], description: result[0]['description'], price: result[0]['price']) 
   end
 
@@ -32,7 +32,7 @@ class Space
              PG.connect(dbname: 'bnb')
            end
 
-    result = conn.exec('SELECT * FROM space;')
+    result = conn.exec('SELECT * FROM spaces;')
     # p result
     result.map do |space|
       Space.new(name: space['name'], description: space['description'], price: space['price'])

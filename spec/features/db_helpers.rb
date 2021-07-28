@@ -1,6 +1,6 @@
 def clear_test_table
   con = PG.connect dbname: 'bnb_test'
-  con.exec('TRUNCATE TABLE users;')
+  con.exec('TRUNCATE TABLE users CASCADE;')
 end
 
 def populate_test_table
