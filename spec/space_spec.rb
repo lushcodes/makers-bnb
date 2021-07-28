@@ -5,11 +5,14 @@ require 'space'
 describe Space do
   describe '.create' do
     it 'Allows a user to list a new space' do
-      Space.create(name: 'Arthurs retreat',
+      space = Space.create(name: 'Arthurs retreat',
                    description: 'A beautiful lakeside house, with a view of a legendary sword',
                    price: '10,000')
-      end
+    expect(space.name).to eq 'Arthurs retreat'
+    expect(space.description).to eq 'A beautiful lakeside house, with a view of a legendary sword'
+    expect(space.price).to eq '10,000'
     end
+  end
 
   describe '.list' do
     it 'displays all spaces' do
