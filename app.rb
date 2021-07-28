@@ -63,4 +63,9 @@ class BnB < Sinatra::Base
     @booking = Booking.create(id: params[:space_id])
     erb(:bookings)
   end
+
+  get('/logout') do
+  session[:logged_in] = false
+  redirect '/'
+  end
 end
