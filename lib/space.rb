@@ -6,12 +6,13 @@ require './app'
 class Space
   attr_reader :name, :description, :price
 
-  def initialize(name:, description:, price:) # user_id:, available? to be added
+  # user_id:, available? to be added
+  def initialize(name:, description:, price:)
     @name = name
     @description = description
     @price = price
-
   end
+
   def self.create(name:, description:, price:)
     conn = if ENV['RACK_ENV'] == 'test'
              PG.connect(dbname: 'bnb_test')
@@ -30,11 +31,11 @@ class Space
            else
              PG.connect(dbname: 'bnb')
            end
-      
+
     result = conn.exec('SELECT * FROM space;')
-    p result
+    # p result
     result.map do |space|
       Space.new(name: space['name'], description: space['description'], price: space['price'])
+    end
   end
-end
 end

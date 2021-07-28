@@ -22,8 +22,8 @@ class BnB < Sinatra::Base
     @spaces = Space.list
     erb(:properties)
   end
-  get("/bookings") do
-    
+
+  post('/bookings') do
     erb(:bookings)
   end
 end
