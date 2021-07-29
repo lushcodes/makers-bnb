@@ -12,7 +12,7 @@ feature 'Log Out' do
   end
 
   scenario 'user is able to log out after logging in' do
-    populate_test_table
+    populate_user_test_table
     visit('/')
     click_button 'Log In'
     fill_in 'email', with: 'lukerocks@party.io'

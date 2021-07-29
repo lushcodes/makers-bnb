@@ -2,6 +2,7 @@
 
 feature 'Add a space' do
   scenario 'User can add a space to the database' do
+    user_sign_up
     add_test_space
     expect(page).to have_content('Lake house')
     expect(page).to have_content('A lovely house by the water')

@@ -30,6 +30,7 @@ class BnB < Sinatra::Base
       redirect('/sign-up')
     else
       session[:logged_in] = true
+      session[:user_id] = user.id
       redirect('/')
     end
   end
@@ -52,7 +53,7 @@ class BnB < Sinatra::Base
   end
 
   post('/listings') do
-    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    Space.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
     redirect '/allspaces'
   end
 
@@ -62,13 +63,19 @@ class BnB < Sinatra::Base
     erb(:properties)
   end
 
+<<<<<<< HEAD
+  post('/bookings') do
+    @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
+=======
   post('/bookings/{id}') do
     @booking = Booking.create(id: params[:space_id])
+>>>>>>> main
     erb(:bookings)
   end
 
   get('/logout') do
   session[:logged_in] = false
+  session[:user_id] = nil
   redirect '/'
   end
 end

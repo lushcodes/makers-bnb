@@ -21,7 +21,7 @@ feature 'Sign up' do
   end
 
   scenario 'cannot sign up if user already exist' do
-    populate_test_table
+    populate_user_test_table
     visit('/')
     click_button 'Sign Up'
     fill_in 'username', with: 'Luke'

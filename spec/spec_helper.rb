@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative './setup_test_database'
-
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
