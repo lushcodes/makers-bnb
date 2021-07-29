@@ -49,3 +49,9 @@ footer {
   color:white;
   text-shadow:2px 2px #333;
 }
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
