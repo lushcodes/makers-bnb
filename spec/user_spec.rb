@@ -7,13 +7,13 @@ describe User do
   end
 
   it 'can be created' do
-    user = create_user
-    expect(user).to be_a(User)
+    new_user = User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
+    expect(new_user).to be_a(User)
   end
 
   it 'cannot be created if user already exists' do
     create_user
-    dupe = create_user
+    dupe = User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
     expect(dupe).to eq nil
   end
 

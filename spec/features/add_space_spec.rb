@@ -9,9 +9,20 @@ feature 'Add a space' do
     expect(page).to have_content('1000')
   end
 
-  scenario 'user can navigate to the add space page' do
+  scenario 'can only add space when user logged in' do
+    populate_test_table
+    visit('/')
+    click_button 'Log In'
+    fill_in 'email', with: 'lukerocks@party.io'
+    fill_in 'password', with: 'Flumpy'
+    click_button 'Submit'
+    click_link 'Add A Space'
+    expect(current_path).to eq '/space/new'
+  end
+
+  scenario 'cannot add space if not logged in' do
     visit('/')
     click_link 'Add A Space'
-    expect(current_path).to eq '/add_space'
+    expect(current_path).to eq '/sign-up'
   end
 end

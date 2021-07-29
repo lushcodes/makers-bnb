@@ -10,7 +10,6 @@ feature 'Sign up' do
   end
 
   scenario 'User can sign up' do
-    clean_table
     visit('/')
     click_button 'Sign Up'
     fill_in 'username', with: 'Luke'
