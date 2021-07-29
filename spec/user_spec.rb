@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
 require 'user'
-
 describe User do
+  before(:each) do
+    clean_table
+  end
+
   it 'can be created' do
-    clear_test_table
-    new_user = User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
-    expect(new_user).to be_a(User)
+    user = create_user
+    expect(user).to be_a(User)
   end
 
   it 'cannot be created if user already exists' do
-    clear_test_table
-    User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
-    dupe = User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
+    create_user
+    dupe = create_user
     expect(dupe).to eq nil
   end
 
   it 'can be logged in' do
-    clear_test_table
-    User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
+    create_user
     logged_in_user = User.authenticate(email: 'lukerocks@party.io', password: 'Flumpy')
     expect(logged_in_user).to eq(true)
   end
