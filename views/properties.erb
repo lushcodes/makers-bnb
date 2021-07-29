@@ -1,19 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	  <title>Makers BnB</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="<%= url('stylesheet.css') %>" rel="stylesheet" type="text/css"/>
+  </head>
 
-<ul>
-  <% @spaces.each do |space|%>
-  <li><%=space.name%></li>
-  <li><%=space.description%></li>
-  <li><%=space.price%></li>
-  <% if @logged_in == true %>
-  <form action="/bookings/<%=space.space_id%>" method="post">
-  <input type="hidden" name="space_id" value="<%= space.space_id %>" />
-  <input type="submit" value="Book" name="Book <%= space.name %>"/>
-  </form>
-  <% else %>
-   <form action="/sign-up" method="get">
-  <input type="hidden" name="space_id" value="<%= space.space_id %>" />
-  <input type="submit" value="Book" name="Book <%= space.name %>"/>
-  </form>
-  <% end %>
-  <% end %>
-  </ul>
+  <body>
+    <div class='container'>
+      <header>
+        <h1>MAKERS BnB</h1>
+      </header>
+
+      <main>
+        <div class="booking_cards">
+          <% @spaces.each do |space|%>
+            <div class="card" style="width: 18rem;">
+              <img src="https://unsplash.com/collections/1229740/1600x900" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%=space.name%></h5>
+                <p class="card-text"><%=space.description%></p>
+                <p class="card-text"><%=space.price%></p>
+                <% if @logged_in == true %>
+                  <form action="/bookings" method="post">
+                    <input type="hidden" name="space_id" value="<%= space.space_id %>"/>
+                    <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
+                  </form>
+                <% else %>
+                  <form action="/sign-up" method="get">
+                    <input type="hidden" name="space_id" value="<%= space.space_id %>" />
+                    <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
+                  </form>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </main>
+      
+      <footer>
+        Created 2021 by Brett, Else, Luke, Thomas, and Will
+      </footer>
+    </div>
+    <!-- JavaScript to enable some elements to work -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
