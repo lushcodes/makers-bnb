@@ -1,4 +1,12 @@
 # frozen_string_literal: true
+def user_sign_up
+  visit('/')
+  click_button('Sign Up')
+  fill_in 'username', with: 'Luke'
+  fill_in 'email', with: 'lukerocks@party.io'
+  fill_in 'password', with: 'Flumpy'
+  click_button 'Submit'
+end
 
 def add_test_space
   visit('/add_space')

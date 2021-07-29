@@ -8,6 +8,7 @@ feature 'Website has button to book space' do
   end
 
   scenario 'User can book a space on listings page' do
+    user_sign_up
     add_test_space
     click_button('Book')
     expect(page).to have_content 'You have booked the Lake house'

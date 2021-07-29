@@ -5,7 +5,7 @@ require './app'
 require_relative 'user'
 
 class Space
-  attr_reader :name, :description, :price, :space_id
+  attr_reader :name, :description, :price, :space_id, :user_id
 
   # user_id:, available? to be added
   def initialize(space_id:, name:, description:, price:, user_id:)
