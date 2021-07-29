@@ -11,6 +11,6 @@ feature 'Add a space' do
   scenario 'user can navigate to the add space page' do
     visit('/')
     click_link 'Add A Space'
-    expect(current_path).to eq '/add_space'
+    expect(current_path).to eq '/space/new'
   end
 end
