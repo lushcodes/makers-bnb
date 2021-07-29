@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/user'
 require './lib/space'
+require './lib/booking'
 
 class BnB < Sinatra::Base
   enable :sessions
@@ -49,8 +50,8 @@ class BnB < Sinatra::Base
   end
 
   post('/listings') do
-      Space.create(name: params[:name], description: params[:description], price: params[:price])
-      redirect '/allspaces'
+    Space.create(name: params[:name], description: params[:description], price: params[:price])
+    redirect '/allspaces'
   end
 
   get('/allspaces') do
@@ -59,6 +60,7 @@ class BnB < Sinatra::Base
   end
 
   post('/bookings') do
+    @booking = Booking.create(id: params[:space_id])
     erb(:bookings)
   end
 
