@@ -8,5 +8,11 @@
   <input type="hidden" name="space_id" value="<%= space.space_id %>" />
   <input type="submit" value="Book" name="Book <%= space.name %>"/>
   </form>
+  <% else %>
+   <form action="/sign-up" method="get">
+  <input type="hidden" name="space_id" value="<%= space.space_id %>" />
+  <input type="submit" value="Book" name="Book <%= space.name %>"/>
+  </form>
+  <% end %>
   <% end %>
   </ul>
