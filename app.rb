@@ -55,6 +55,7 @@ class BnB < Sinatra::Base
   end
 
   get('/allspaces') do
+    @logged_in = session[:logged_in]
     @spaces = Space.list
     erb(:properties)
   end
