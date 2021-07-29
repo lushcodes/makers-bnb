@@ -29,6 +29,7 @@ class Space
   end
 
   def self.find_space(id:)
+    p "In find space"
     conn = if ENV['RACK_ENV'] == 'test'
         PG.connect(dbname: 'bnb_test')
       else
