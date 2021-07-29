@@ -1,6 +1,5 @@
 feature 'Log Out' do
   scenario 'user is able to log out after sign up' do
-    clear_test_table
     visit('/')
     click_button 'Sign Up'
     fill_in 'username', with: 'Luke'

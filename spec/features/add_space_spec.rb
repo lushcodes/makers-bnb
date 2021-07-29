@@ -20,7 +20,6 @@ feature 'Add a space' do
   end
 
   scenario 'cannot add space if not logged in' do
-    clear_test_table
     visit('/')
     click_link 'Add A Space'
     expect(current_path).to eq '/sign-up'

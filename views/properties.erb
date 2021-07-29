@@ -4,6 +4,7 @@
   <li><%=space.name%></li>
   <li><%=space.description%></li>
   <li><%=space.price%></li>
+  <% if @logged_in == true %>
   <form action="/bookings/<%=space.space_id%>" method="post">
   <input type="hidden" name="space_id" value="<%= space.space_id %>" />
   <input type="submit" value="Book" name="Book <%= space.name %>"/>
