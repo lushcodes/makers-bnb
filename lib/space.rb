@@ -45,7 +45,7 @@ class Space
 
     result = conn.exec('SELECT * FROM spaces;')
     result.map do |space|
-      Space.new(space_id: result[0]['space_id'], name: space['name'], description: space['description'], price: space['price'])
+      Space.new(space_id: space['space_id'], name: space['name'], description: space['description'], price: space['price'])
     end
   end
 end
