@@ -2,7 +2,11 @@
 
 feature 'Website has button to book space' do
     scenario 'cannot book space if not logged in' do
-      add_test_space
+      user = User.create(username: 'TEST', email: 'saveme@example.com', password: 'Flumpy')
+      Space.create(name: 'Arthurs retreat',
+                   description: 'A beautiful lakeside house, with a view of a legendary sword',
+                   price: '10,000',
+                   user_id: user.id)
       visit('/')
       click_link 'Book A Space'
       expect(current_path).to eq '/allspaces'
