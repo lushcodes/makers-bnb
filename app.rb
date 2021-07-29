@@ -61,9 +61,6 @@ class BnB < Sinatra::Base
   end
 
   post('/bookings') do
-    p "output"
-    p params
-    p session[:user_id]
     @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
     erb(:bookings)
   end
