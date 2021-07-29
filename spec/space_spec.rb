@@ -4,9 +4,7 @@ require 'space'
 require 'user'
 
 describe Space do
-  before(:each) do
-    clean_table
-  end
+  
   describe '.create' do
     it 'Allows a user to list a new space' do
       user = User.create(username: 'TEST', email: 'saveme@example.com', password: 'Flumpy')

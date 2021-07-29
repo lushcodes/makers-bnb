@@ -2,9 +2,6 @@
 
 require 'user'
 describe User do
-  before(:each) do
-    clean_table
-  end
 
   it 'can be created' do
     new_user = User.create(username: 'Luke', email: 'lukerocks@party.io', password: 'Flumpy')
