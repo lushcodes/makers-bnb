@@ -61,4 +61,9 @@ class BnB < Sinatra::Base
   post('/bookings') do
     erb(:bookings)
   end
+
+  get('/logout') do
+  session[:logged_in] = false
+  redirect '/'
+  end
 end
