@@ -25,7 +25,7 @@
                 <p class="card-text"><%=space.description%></p>
                 <p class="card-text"><%=space.price%></p>
                 <% if @logged_in == true %>
-                  <form action="/bookings" method="post">
+                  <form action="/bookings/<%=space.space_id%>" method="post">
                     <input type="hidden" name="space_id" value="<%= space.space_id %>"/>
                     <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
                   </form>
