@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'pg'
+require 'bcrypt'
 
 class User
   attr_reader :id, :username, :email, :password
@@ -22,7 +23,8 @@ class User
     if user_exists.ntuples != 0
       nil
     else
-      new_user = con.exec("INSERT INTO users (username, email, password) VALUES ('#{username}', '#{email}', '#{password}') RETURNING user_id, username, email, password;")
+      encrypted_password = BCrypt::Password.create(password)
+      new_user = con.exec("INSERT INTO users (username, email, password) VALUES ('#{username}', '#{email}', '#{encrypted_password}') RETURNING user_id, username, email, password;")
       User.new(id: new_user[0]['user_id'], username: new_user[0]['username'], email: new_user[0]['email'],
                password: new_user[0]['password'])
     end
@@ -46,16 +48,10 @@ class User
           else
             PG.connect dbname: 'bnb'
           end
-
-    user_data = con.exec("SELECT * FROM users WHERE email = '#{email}' AND password = '#{password}';")
+    
+    user_data = con.exec("SELECT * FROM users WHERE email = '#{email}';")
     return unless user_data.any?
-
-    checked_user = User.new(id: user_data[0]['user_id'], username: user_data[0]['username'], email: user_data[0]['email'],
-                            password: user_data[0]['password'])
-    if checked_user.id.nil?
-      false
-    else
-      true
-    end
+    checked_user = User.new(id: user_data[0]['user_id'], username: user_data[0]['username'], email: user_data[0]['email'], password: user_data[0]['password'])
+    BCrypt::Password.new(checked_user.password) == password
   end
 end

@@ -56,7 +56,6 @@ class BnB < Sinatra::Base
   end
 
   post('/listings') do
-    p "the id is #{session[:user_id]}"
     Space.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
     redirect '/allspaces'
   end
@@ -68,7 +67,6 @@ class BnB < Sinatra::Base
   end
 
   post('/bookings/{id}') do
-    p "the id is #{session[:user_id]}"
     @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
     erb(:bookings)
   end
