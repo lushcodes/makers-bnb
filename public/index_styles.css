@@ -3,6 +3,11 @@
   align-content: flex-end;
 }
 
+.logo {
+  max-height: 4rem;
+  padding: 6px;
+}
+
 .bgimage {
   width:100%;
   height:500px;
