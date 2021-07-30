@@ -28,6 +28,18 @@ class User
     end
   end
 
+  def self.find(email:)
+    con = if ENV['RACK_ENV'] == 'test'
+      PG.connect dbname: 'bnb_test'
+    else
+      PG.connect dbname: 'bnb'
+    end
+    user_data = con.exec("SELECT * FROM users WHERE email= '#{email}';")
+    User.new(id: user_data[0]['user_id'], username: user_data[0]['username'], email: user_data[0]['email'],
+      password: user_data[0]['password'])
+
+  end
+
   def self.authenticate(email:, password:)
     con = if ENV['RACK_ENV'] == 'test'
             PG.connect dbname: 'bnb_test'
