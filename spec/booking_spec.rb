@@ -17,7 +17,7 @@ describe Booking do
   end
 
   describe 'Populate booking_user_id in booking database' do
-    it 'Saves user id to databse' do
+    it 'Saves user id to database' do
       user = User.create(username: 'TEST', email: 'saveme@example.com', password: 'Flumpy')
       space =  Space.create(name: 'Arthurs retreat',
         description: 'A beautiful lakeside house, with a view of a legendary sword',
