@@ -51,9 +51,7 @@ class User
     
     user_data = con.exec("SELECT * FROM users WHERE email = '#{email}';")
     return unless user_data.any?
-    checked_user = User.new(id: user_data[0]['user_id'], username: user_data[0]['username'], email: user_data[0]['email'],
-                            password: user_data[0]['password'])
-    BCrypt::Password.new(user_data[0]['password']) == password 
-
+    checked_user = User.new(id: user_data[0]['user_id'], username: user_data[0]['username'], email: user_data[0]['email'], password: user_data[0]['password'])
+    BCrypt::Password.new(checked_user.password) == password
   end
 end
