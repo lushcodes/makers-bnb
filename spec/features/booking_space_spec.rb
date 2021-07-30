@@ -13,11 +13,23 @@ feature 'Website has button to book space' do
       click_button 'Book'
       expect(current_path).to eq '/sign-up'
     end
+  end
 
-  scenario 'User can book a space on listings page' do
+#   scenario 'User can book a space on listings page' do
+#     user_sign_up
+#     add_test_space
+#     click_button('Book')
+#     expect(page).to have_content 'You have booked the Lake house'
+#   end
+# end
+
+feature 'Start and End dates' do
+  scenario 'user can enter start and end date for booking' do
     user_sign_up
     add_test_space
-    click_button('Book')
-    expect(page).to have_content 'You have booked the Lake house'
+    click_button 'Book'
+    expect(current_path).to eq '/bookings/new'
+    expect(page).to have_content 'Start date:'
+    expect(page).to have_content 'End date:'
   end
 end

@@ -66,16 +66,22 @@ class BnB < Sinatra::Base
     @spaces = Space.list
     erb(:properties)
   end
-
-  post('/bookings/{id}') do
-    p "the id is #{session[:user_id]}"
+  post('/bookings/new') do
     @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
-    erb(:bookings)
+    erb(:dates)
   end
+
+  # post('/bookings/{id}') do
+  #   p "the id is #{session[:user_id]}"
+  #   @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
+  #   erb(:bookings)
+  # end
 
   get('/logout') do
   session[:logged_in] = false
   session[:user_id] = nil
   redirect '/'
   end
+
+
 end

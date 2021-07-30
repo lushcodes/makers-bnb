@@ -16,7 +16,7 @@ describe Booking do
     end
   end
 
-  describe 'Populare booking_user_id in booking database' do
+  describe 'Populate booking_user_id in booking database' do
     it 'Saves user id to databse' do
       user = User.create(username: 'TEST', email: 'saveme@example.com', password: 'Flumpy')
       space =  Space.create(name: 'Arthurs retreat',
@@ -27,4 +27,14 @@ describe Booking do
       expect(newbook.user_id).to eq(user.id)
     end
   end
+  # describe 'Adding start and end dates to database' do
+  #   it 'saves start and end dates' do
+  #     user = User.create(username: 'TEST', email: 'saveme@example.com', password: 'Flumpy')
+  #     space =  Space.create(name: 'Arthurs retreat',
+  #       description: 'A beautiful lakeside house, with a view of a legendary sword',
+  #       price: '10,000',
+  #       user_id: user.id)
+  #     newbook = Booking.create(id: space.space_id, user_id: user.id)
+  #   end
+  # end
 end
