@@ -27,7 +27,7 @@
           </div>
           <div class='sign_up'>    
             <% if @logged_in == false %>
-              <form action="/sign-up" method="get">
+              <form action="/user/new" method="get">
                 <input type="submit" name="signup" value="Sign Up" class="btn btn-primary ml-3">
               </form>
             <% else %>
@@ -49,7 +49,7 @@
                 <% if @logged_in == true %>
                   <a href="/space/new" class="btn btn-primary btn-large mx-3">Add A Space »</a>             
                 <% else %>
-                  <a href="/sign-up" class="btn btn-primary btn-large mx-3">Add A Space »</a>
+                  <a href="/user/new" class="btn btn-primary btn-large mx-3">Add A Space »</a>
                 <% end %>
                   <a href="/allspaces" class="btn btn-primary btn-large mx-3">Book A Space »</a>
               </div>
@@ -69,7 +69,7 @@
                     <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
                   </form>
                 <% else %>
-                  <form action="/sign-up" method="get">
+                  <form action="/user/new" method="get">
                     <input type="hidden" name="space_id" value="<%= space.space_id %>" />
                     <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
                   </form>

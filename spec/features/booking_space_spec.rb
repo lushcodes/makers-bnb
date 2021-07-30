@@ -11,7 +11,7 @@ feature 'Website has button to book space' do
       click_link 'Book A Space'
       expect(current_path).to eq '/allspaces'
       click_button 'Book'
-      expect(current_path).to eq '/sign-up'
+      expect(current_path).to eq '/user/new'
     end
 
   scenario 'User can book a space on listings page' do

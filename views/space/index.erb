@@ -30,7 +30,7 @@
                     <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
                   </form>
                 <% else %>
-                  <form action="/sign-up" method="get">
+                  <form action="/user/new" method="get">
                     <input type="hidden" name="space_id" value="<%= space.space_id %>" />
                     <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
                   </form>

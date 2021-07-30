@@ -21,14 +21,14 @@ class BnB < Sinatra::Base
   end
 
   ## Sign up, log in, log out
-  get('/sign-up') do
-    erb(:sign_up)
+  get('/user/new') do
+    erb(:'user/signup')
   end
 
   post('/new-user') do
     user = User.create(username: params[:username], email: params[:email], password: params[:password])
     if user.nil?
-      redirect('/sign-up')
+      redirect('user/new')
     else
       session[:logged_in] = true
       session[:user_id] = user.id
@@ -37,7 +37,7 @@ class BnB < Sinatra::Base
   end
 
   get('/session') do
-    erb(:log_in)
+    erb(:'user/login')
   end
 
   post('/session/new') do
@@ -52,10 +52,10 @@ class BnB < Sinatra::Base
   end
 
   get('/space/new') do
-    erb(:space_form)
+    erb(:'space/new')
   end
 
-  post('/listings') do
+  post('/space') do
     Space.create(name: params[:name], description: params[:description], price: params[:price], user_id: session[:user_id])
     redirect '/allspaces'
   end
@@ -63,12 +63,12 @@ class BnB < Sinatra::Base
   get('/allspaces') do
     @logged_in = session[:logged_in]
     @spaces = Space.list
-    erb(:properties)
+    erb(:'space/index')
   end
 
   post('/bookings/{id}') do
     @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
-    erb(:bookings)
+    erb(:'booking/confirmation')
   end
 
   get('/logout') do

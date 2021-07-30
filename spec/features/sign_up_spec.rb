@@ -28,6 +28,6 @@ feature 'Sign up' do
     fill_in 'email', with: 'lukerocks@party.io'
     fill_in 'password', with: 'Flumpy'
     click_button 'Submit'
-    expect(current_path).to eq '/sign-up'
+    expect(current_path).to eq '/user/new'
   end
 end

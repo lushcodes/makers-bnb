@@ -23,6 +23,6 @@ feature 'Add a space' do
   scenario 'cannot add space if not logged in' do
     visit('/')
     click_link 'Add A Space'
-    expect(current_path).to eq '/sign-up'
+    expect(current_path).to eq '/user/new'
   end
 end
