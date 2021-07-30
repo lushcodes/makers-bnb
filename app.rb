@@ -16,6 +16,7 @@ class BnB < Sinatra::Base
   get('/') do
     session[:logged_in] = false if session[:logged_in].nil?
     @logged_in = session[:logged_in]
+    @random_spaces = Space.list.sample(5)
     erb(:index)
   end
 

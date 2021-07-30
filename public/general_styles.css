@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+/* Used for index and all spaces */
+.booking_cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 5px;
+  width: 18rem;
+  background-color:rgb(182, 208, 255);
+  background: url('https://source.unsplash.com/YeP1MUZDSsE');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: whitesmoke;
+}
+
+/* Used for sign up, log in, and create space */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

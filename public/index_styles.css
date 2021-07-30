@@ -1,0 +1,23 @@
+.header_buttons {
+  display: flex;
+  align-content: flex-end;
+}
+
+.bgimage {
+  width:100%;
+  height:500px;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  background: url('https://source.unsplash.com/YeP1MUZDSsE');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+}
+.bgimage h1 {
+  color:white;
+  text-shadow:2px 2px #333;
+}
+
+.bgimage p {
+  color: whitesmoke;
+}
