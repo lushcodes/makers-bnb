@@ -21,14 +21,17 @@
       <div class='container d-flex flex-column align-items-center justify-content-center'>
         <main>
           <div class='form-wrapper'>
+          <form action= '/bookings/<%=@space_id%>' method='post'>
             <label for="start">Start date:</label>
-            <input type="date" id="start" name="trip-start"
+            <input type="date" id="start" name="start_date"
             value="2021-07-30"
             min="2021-07-30" max="2022-12-31">
             <label for="end">End date:</label>
-            <input type="date" id="end" name="trip-end"
+            <input type="date" id="end" name="end_date"
             value="2021-07-30"
             min="2021-07-30" max="2022-12-31">
+            <input type='submit' name='submit' value='Submit'>
+            </form>
           </div>
         </main>
       

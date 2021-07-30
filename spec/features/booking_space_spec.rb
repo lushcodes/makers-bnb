@@ -31,5 +31,9 @@ feature 'Start and End dates' do
     expect(current_path).to eq '/bookings/new'
     expect(page).to have_content 'Start date:'
     expect(page).to have_content 'End date:'
+    fill_in 'start_date', with: '2021-07-30'
+    fill_in 'end_date', with: '2021-08-02'
+    click_button 'Submit'
+    expect(page).to have_content 'You have booked the Lake house'
   end
 end
