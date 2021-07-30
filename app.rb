@@ -65,9 +65,13 @@ class BnB < Sinatra::Base
     @spaces = Space.list
     erb(:properties)
   end
+  post('/bookings/new') do
+    @space_id = params[:space_id]
+    erb(:dates)
+  end
 
-  post('/bookings/{id}') do
-    @booking = Booking.create(id: params[:space_id], user_id: session[:user_id])
+  post('/bookings/{space_id}') do
+    @booking = Booking.create(id: params[:space_id], user_id: session[:user_id], start_date: params[:start_date], end_date: params[:end_date])
     erb(:bookings)
   end
 
@@ -76,4 +80,6 @@ class BnB < Sinatra::Base
   session[:user_id] = nil
   redirect '/'
   end
+
+
 end

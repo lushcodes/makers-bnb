@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,42 +9,36 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="<%= url('general_styles.css') %>" rel="stylesheet" type="text/css"/>
+    <link href="<%= url('spaceform_styles.css') %>" rel="stylesheet" type="text/css"/>
   </head>
 
   <body>
     <div class='container'>
       <header>
-        <a href="/"><img class="logo" src="logo.png"></a>
+        <h1>MAKERS BnB</h1>
       </header>
 
-      <main>
-        <div class="booking_cards">
-          <% @spaces.each do |space|%>
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title"><%=space.name%></h5>
-                <p class="card-text"><%=space.description%></p>
-                <p class="card-text"><%=space.price%></p>
-                <% if @logged_in == true %>
-                  <form action="/bookings/new" method="post">
-                    <input type="hidden" name="space_id" value="<%= space.space_id %>"/>
-                    <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
-                  </form>
-                <% else %>
-                  <form action="/sign-up" method="get">
-                    <input type="hidden" name="space_id" value="<%= space.space_id %>" />
-                    <input type="submit" value="Book" name="Book <%= space.name %>" class="btn btn-primary"/>
-                  </form>
-                <% end %>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </main>
+      <div class='container d-flex flex-column align-items-center justify-content-center'>
+        <main>
+          <div class='form-wrapper'>
+          <form action= '/bookings/<%=@space_id%>' method='post'>
+            <label for="start">Start date:</label>
+            <input type="date" id="start" name="start_date"
+            value="2021-07-30"
+            min="2021-07-30" max="2022-12-31">
+            <label for="end">End date:</label>
+            <input type="date" id="end" name="end_date"
+            value="2021-07-30"
+            min="2021-07-30" max="2022-12-31">
+            <input type='submit' name='submit' value='Submit'>
+            </form>
+          </div>
+        </main>
       
-      <footer>
-        Created 2021 by Brett, Else, Karim, Luke, Thomas, and Will
-      </footer>
+        <footer>
+          Created 2021 by Brett, Else, Karim, Luke, Thomas, and Will
+        </footer>
+      </div>
     </div>
     <!-- JavaScript to enable some elements to work -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -51,3 +46,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>
+

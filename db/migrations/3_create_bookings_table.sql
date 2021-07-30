@@ -2,6 +2,8 @@ CREATE TABLE bookings (booking_id SERIAL PRIMARY KEY,
 name VARCHAR(64), 
 description VARCHAR(500), 
 price VARCHAR(8),
+start_date DATE,
+end_date DATE,
 booking_user_id INTEGER,
 CONSTRAINT fk_booking_user
   FOREIGN KEY(booking_user_id) 
