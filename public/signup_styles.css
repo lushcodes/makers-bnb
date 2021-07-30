@@ -5,3 +5,7 @@
   background-position: center;
   background-size: cover;
 }
+.logo {
+  max-height: 4rem;
+  padding: 6px;
+}

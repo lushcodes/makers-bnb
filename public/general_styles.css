@@ -10,6 +10,11 @@ body {
   flex-direction: column;
 }
 
+.logo {
+  max-height: 4rem;
+  padding: 6px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
