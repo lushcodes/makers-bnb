@@ -49,14 +49,11 @@ class User
             PG.connect dbname: 'bnb'
           end
     
-    user_data = con.exec("SELECT * FROM users WHERE email = '#{email}' AND password = '#{password}';")
+    user_data = con.exec("SELECT * FROM users WHERE email = '#{email}';")
     return unless user_data.any?
     checked_user = User.new(id: user_data[0]['user_id'], username: user_data[0]['username'], email: user_data[0]['email'],
                             password: user_data[0]['password'])
-    if checked_user.id.nil? # If Decrypted password != typed password 
-      false
-    else
-      true
-    end
+    BCrypt::Password.new(user_data[0]['password']) == password 
+
   end
 end
