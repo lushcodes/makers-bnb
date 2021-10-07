@@ -1,5 +1,7 @@
-# makers-bnb
-A web app clone of airbnb
+# Makers-BnB
+A web app clone of Airbnb. Users can list, browse, and book spaces. Users have to sign up to book or list spaces.
+
+![Screenshot of homepage](/public/screenshots/homepageSS.jpg)
 
 
 ## USER STORIES FOR MVP
